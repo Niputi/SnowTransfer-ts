@@ -106,7 +106,7 @@ class ChannelMethods {
      * }
      * let messages = await client.channel.getChannelMessages('channel id', options);
      */
-    async getChannelMessages(channelId: string, options: {around?: string, before?: string, after?:string, limit?: number} = {}): Promise<Object> {
+    async getChannelMessages(channelId: string, options: {around?: string, before?: string, after?:string, limit?: number} = {}): Promise<TMessage[]> {
         if (options.around) {
             delete options.before;
             delete options.after;
@@ -138,7 +138,7 @@ class ChannelMethods {
      * let client = new SnowTransfer('TOKEN')
      * let message = await client.channel.getChannelMessage('channel id', 'message id')
      */
-    async getChannelMessage(channelId: string, messageId: string): Promise<Object> {
+    async getChannelMessage(channelId: string, messageId: string): Promise<TMessage> {
         return this.requestHandler.request(Endpoints.CHANNEL_MESSAGE(channelId, messageId), 'get', 'json');
     }
 
@@ -443,7 +443,7 @@ class ChannelMethods {
      * @param {String} channelId - Id of the channel
      * @returns {Promise.<Object[]>} Array of [message objects](https://discordapp.com/developers/docs/resources/channel#message-object)
      */
-    async getChannelPinnedMessages(channelId: string): Promise<Object[]> {
+    async getChannelPinnedMessages(channelId: string): Promise<TMessage[]> {
         return this.requestHandler.request(Endpoints.CHANNEL_PINS(channelId), 'get', 'json');
     }
 

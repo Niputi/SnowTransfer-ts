@@ -103,7 +103,7 @@ declare class ChannelMethods {
         before?: string;
         after?: string;
         limit?: number;
-    }): Promise<Object>;
+    }): Promise<TMessage[]>;
     /**
      * Get a single message via Id
      * @param {String} channelId - Id of the channel
@@ -119,7 +119,7 @@ declare class ChannelMethods {
      * let client = new SnowTransfer('TOKEN')
      * let message = await client.channel.getChannelMessage('channel id', 'message id')
      */
-    getChannelMessage(channelId: string, messageId: string): Promise<Object>;
+    getChannelMessage(channelId: string, messageId: string): Promise<TMessage>;
     /**
      * Creates a new Message within a channel
      *
@@ -361,7 +361,7 @@ declare class ChannelMethods {
      * @param {String} channelId - Id of the channel
      * @returns {Promise.<Object[]>} Array of [message objects](https://discordapp.com/developers/docs/resources/channel#message-object)
      */
-    getChannelPinnedMessages(channelId: string): Promise<Object[]>;
+    getChannelPinnedMessages(channelId: string): Promise<TMessage[]>;
     /**
      * Pin a message within a channel
      * @param {String} channelId - Id of the channel
