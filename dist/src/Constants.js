@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    REST_API_VERSION: 7,
+    GET_CHANNEL_MESSAGES_MAX_RESULTS: 100,
+    BULK_DELETE_MESSAGES_MIN: 2,
+    BULK_DELETE_MESSAGES_MAX: 100
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6Ii4vc3JjLyIsInNvdXJjZXMiOlsic3JjL0NvbnN0YW50cy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGtCQUFlO0lBQ2IsZ0JBQWdCLEVBQUcsQ0FBQztJQUNwQixnQ0FBZ0MsRUFBRyxHQUFHO0lBQ3RDLHdCQUF3QixFQUFFLENBQUM7SUFDM0Isd0JBQXdCLEVBQUUsR0FBRztDQUM5QixDQUFBIn0=

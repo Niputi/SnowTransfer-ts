@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+      "outDir": "./dist/",        // path to output directory
+      "strictNullChecks": false,   // enable strict null checks as a best practice
+      "module": "commonjs",            // specify module code generation
+      "target": "es2018",            // specify ECMAScript target version
+      "declaration": true,
+      "declarationDir": "./types",
+      "strict": true,
+      "pretty": true,
+      "noUnusedParameters": true,
+      "noUnusedLocals": true,
+      "alwaysStrict": true,
+      "downlevelIteration": true,
+      "emitDecoratorMetadata": true,
+      "keyofStringsOnly": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "experimentalDecorators": true,
+      "resolveJsonModule": true,
+      "allowSyntheticDefaultImports": true,
+      "moduleResolution": "node",
+      "inlineSourceMap": true,
+      "sourceRoot": "./src"
+  },
+  "include": [
+      "./src/"
+  ]
+}
