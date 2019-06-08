@@ -2,27 +2,37 @@
 export interface TGuild {
     id: string;
     name: string;
-    iocn: string;
-    splash: string;
+    iocn: string | null;
+    splash: string | null;
+    owner?: boolean;
     owner_id: string;
+    permissions?: number;
     region: string;
     afk_channel_id: string;
-    afk_timeout: number;
-    embed_enabled: boolean;
-    embed_channel_id: string;
-    verification: number;
-    default_message_notifications: number;
-    explicit_content_filter: number;
+    afk_timeout: number | null;
+    embed_enabled?: boolean;
+    embed_channel_id?: string;
+    verification: 0 | 1 | 2 | 3 | 4;
+    default_message_notifications: 0 | 1;
+    explicit_content_filter: 0 | 1 | 2;
     roles: TRole[];
     emojis: TEmoji[];
     features: string[];
-    mfa_level: number;
-    application_id?: string;
-    widget_enabled: boolean;
-    widget_channel_id: string;
+    mfa_level: 0 | 1;
+    application_id?: string | null;
+    widget_enabled?: boolean;
+    widget_channel_id?: string;
+    system_channel_id: string | null;
+    max_presences: number | null;
+    max_members: number;
+    vanity_url_code: string | null;
+    description: string | null;
+    banner: string | null;
+    premium_tier: 0 | 1 | 2 | 3;
+    premium_subscription_count?: number;
 }
 export interface TEmoji {
-    id: string;
+    id: string | null;
     name: string;
     roles?: TRole[];
     user?: TUser;
@@ -32,20 +42,23 @@ export interface TEmoji {
 }
 export interface TChannel {
     Id: string;
-    type: number;
+    type: 0 | 1 | 2 | 3 | 4 | 5 | 6;
     guild_id?: string;
     position?: number;
     permission_overwrites: TPermissionOverwrite[];
     name?: string;
-    topic?: string;
+    topic?: string | null;
     nsfw?: boolean;
-    last_message_id?: string;
+    last_message_id?: string | null;
     bitrate?: number;
     user_limit?: number;
+    rate_limit_per_user?: number;
     recipients?: TUser[];
-    icon?: string;
+    icon?: string | null;
+    owner_id?: string;
     application_id?: string;
-    parent_id?: string;
+    parent_id?: string | null;
+    last_pin_timestamp?: string;
 }
 export interface TGuildMember {
     user: TUser;
@@ -64,15 +77,17 @@ export interface TUser {
     id: string;
     username: string;
     discriminator: string;
-    avatar: string;
+    avatar: string | null;
     bot?: boolean;
     mfa_enabled?: boolean;
     locale?: string;
     verified?: boolean;
+    email?: string;
+    flags?: number;
     premium_type?: 1 | 2;
 }
 export declare type TRole = {
-    Id: string;
+    id: string;
     name: string;
     color: number;
     hoist: boolean;
@@ -166,7 +181,7 @@ export interface TMessage {
     id: string;
     channel_id: string;
     guild_id?: string;
-    author: TUser;
+    author: TUser | string;
     member?: TGuildMember;
     content: string;
     timestamp: string;
@@ -190,6 +205,7 @@ export interface TMessage {
         me: boolean;
         emoji: TEmoji;
     }[];
+    nonce?: string | null;
     pinned: boolean;
     webhook_id?: string;
     type: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
