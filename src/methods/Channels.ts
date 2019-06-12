@@ -1,7 +1,7 @@
 import Endpoints from "../Endpoints";
 import Constants from "../Constants";
 import RequestHandler from "../RequestHandler";
-import { TPermissionOverwrite, TChannel, TMessage, TUser, TInvite, PartialInputMessage } from "../LibTypes";
+import { TPermissionOverwrite, TChannel, TMessage, TUser, TInvite, PartialInputMessage, TEmbedObject } from "../LibTypes";
 
 /**
  * Methods for interacting with Channels and Messages
@@ -215,7 +215,7 @@ class ChannelMethods {
      * let message = await client.channel.createMessage('channel id', 'pong')
      * client.channel.editMessage('channel id', message.id, `pong ${Date.now() - time}ms`)
      */
-    async editMessage(channelId :string, messageId: string, data: {content? : string, embed: Object} | string): Promise<TMessage> {
+    async editMessage(channelId :string, messageId: string, data: {content? : string, embed?: TEmbedObject} | string): Promise<TMessage> {
         if (typeof data !== 'string' && !data.content && !data.embed) {
             throw new Error('Missing content or embed');
         }

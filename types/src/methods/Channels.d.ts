@@ -1,5 +1,5 @@
 import RequestHandler from "../RequestHandler";
-import { TPermissionOverwrite, TChannel, TMessage, TUser, TInvite, PartialInputMessage } from "../LibTypes";
+import { TPermissionOverwrite, TChannel, TMessage, TUser, TInvite, PartialInputMessage, TEmbedObject } from "../LibTypes";
 /**
  * Methods for interacting with Channels and Messages
  */
@@ -182,7 +182,7 @@ declare class ChannelMethods {
      */
     editMessage(channelId: string, messageId: string, data: {
         content?: string;
-        embed: Object;
+        embed?: TEmbedObject;
     } | string): Promise<TMessage>;
     /**
      * Delete a message
