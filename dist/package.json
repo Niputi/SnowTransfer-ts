@@ -29,14 +29,13 @@
     "bugs": "https://github.com/Niputi/SnowTransfer-ts/issues",
     "dependencies": {
         "axios": "~0.19.0",
-        "form-data": "~2.3.3"
+        "form-data": "~2.5.0"
     },
     "optionalDependencies": {
-        "@sentry/node": "^5.4.0"
+        "@sentry/node": "^5.4.3"
     },
     "devDependencies": {
-        "@types/form-data": "^2.2.1",
-        "@types/node": "^12.0.8",
-        "eslint": "^5.16.0"
+        "@types/node": "^12.0.12",
+        "eslint": "^6.0.1"
     }
 }
