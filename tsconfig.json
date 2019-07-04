@@ -19,9 +19,7 @@
       "experimentalDecorators": true,
       "resolveJsonModule": true,
       "allowSyntheticDefaultImports": true,
-      "moduleResolution": "node",
-      "inlineSourceMap": true,
-      "sourceRoot": "./src"
+      "moduleResolution": "node"
   },
   "include": [
       "./src/"
