@@ -61,13 +61,9 @@ class RequestHandler {
                             break;
                     }
                     this.latency = Date.now() - latency;
-                    //@ts-ignore
                     let offsetDate = this._getOffsetDateFromHeader(request.headers['date']);
-                    //@ts-ignore
                     this._applyRatelimitHeaders(bkt, request.headers, offsetDate, endpoint.endsWith('/reactions/:id'));
-                    //@ts-ignore
                     if (request.data) {
-                        //@ts-ignore
                         return res(request.data);
                     }
                     return res();

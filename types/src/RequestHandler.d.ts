@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Method, AxiosInstance } from "axios";
 import { NodeClient } from "@sentry/node";
 import Ratelimiter from "./Ratelimiter";
@@ -68,7 +67,7 @@ declare class RequestHandler {
      * @returns {Promise<Object>} - Result of the request
      * @private
      */
-    _request(endpoint: string, method: Method, data: Object, useParams?: boolean): Promise<object>;
+    private _request;
     /**
      * Execute a multipart/form-data request
      * @param {String} endpoint - Endpoint to use
@@ -80,11 +79,6 @@ declare class RequestHandler {
      * @returns {Promise.<Object>} - Result of the request
      * @private
      */
-    _multiPartRequest(endpoint: string, method: Method, data: {
-        file?: {
-            name?: string;
-            file: Buffer;
-        };
-    }): Promise<Object>;
+    private _multiPartRequest;
 }
 export default RequestHandler;

@@ -1,4 +1,4 @@
-import axios, { Method, AxiosInstance } from "axios";
+import axios, { Method, AxiosInstance, AxiosResponse } from "axios";
 import {NodeClient} from "@sentry/node";
 import Ratelimiter from "./Ratelimiter";
 import LocalBucket from "./ratelimitBuckets/LocalBucket";
@@ -69,7 +69,7 @@ class RequestHandler {
     request<T>(endpoint: string, method: Method, dataType: "json" | "multipart" = 'json', data = {}, attempts = 0): Promise<T> {
         return new Promise(async (res, rej) => {
             this.ratelimiter.queue(async (bkt: any) => {
-                let request;
+                let request: AxiosResponse<T>;
                 let latency = Date.now();
                 try {
                     switch (dataType) {
@@ -83,13 +83,9 @@ class RequestHandler {
                             break;
                     }
                     this.latency = Date.now() - latency;
-                    //@ts-ignore
                     let offsetDate = this._getOffsetDateFromHeader(request.headers['date']);
-                    //@ts-ignore
                     this._applyRatelimitHeaders(bkt, request.headers, offsetDate, endpoint.endsWith('/reactions/:id'));
-                    //@ts-ignore
                     if (request.data) {
-                        //@ts-ignore
                         return res(request.data);
                     }
                     return res();
@@ -171,7 +167,7 @@ class RequestHandler {
      * @returns {Promise<Object>} - Result of the request
      * @private
      */
-    async _request(endpoint: string, method: Method, data: Object, useParams = false): Promise<object> {
+    private async _request<T>(endpoint: string, method: Method, data: Object, useParams = false): Promise<AxiosResponse<T>> {
         let headers = {};
         //@ts-ignore
         if (data.reason) {
@@ -198,7 +194,7 @@ class RequestHandler {
      * @returns {Promise.<Object>} - Result of the request
      * @private
      */
-    async _multiPartRequest(endpoint: string, method: Method, data : {file?: {name?: string, file: Buffer}}): Promise<Object> {
+    private async _multiPartRequest<T>(endpoint: string, method: Method, data : {file?: {name?: string, file: Buffer}}): Promise<AxiosResponse<T>> {
         let formData = new FormData();
         if (data.file.file) {
             if (data.file.name) {
