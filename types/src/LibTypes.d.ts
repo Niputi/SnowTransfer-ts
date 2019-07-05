@@ -31,6 +31,14 @@ export interface TGuild {
     premium_tier: 0 | 1 | 2 | 3;
     premium_subscription_count?: number;
 }
+export interface Disocrd_Rate_Limit_Headers {
+    "X-RateLimit-Limit": number;
+    "X-RateLimit-Remaining": number;
+    "X-RateLimit-Reset": number;
+    "X-RateLimit-Bucket": string;
+    "Retry-After"?: number;
+    "X-RateLimit-Global"?: boolean;
+}
 export interface TEmoji {
     id: string | null;
     name: string;
