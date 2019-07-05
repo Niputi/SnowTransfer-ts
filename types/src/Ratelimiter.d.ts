@@ -1,9 +1,12 @@
+import LocalBucket from "./ratelimitBuckets/LocalBucket";
 /**
  * Ratelimiter used for handling the ratelimits imposed by the rest api
  * @protected
  */
 declare class Ratelimiter {
-    buckets: Object;
+    buckets: {
+        [key: string]: LocalBucket;
+    };
     global: boolean;
     globalReset: number;
     /**

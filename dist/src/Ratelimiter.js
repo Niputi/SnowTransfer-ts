@@ -41,12 +41,9 @@ class Ratelimiter {
      */
     queue(fn, url, method) {
         let routeKey = this.routify(url, method);
-        //@ts-ignore
         if (!this.buckets[routeKey]) {
-            //@ts-ignore
             this.buckets[routeKey] = new LocalBucket_1.default(this);
         }
-        //@ts-ignore
         this.buckets[routeKey].queue(fn);
     }
 }

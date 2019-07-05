@@ -7,7 +7,7 @@ import LocalBucket from "./ratelimitBuckets/LocalBucket";
  */
 class Ratelimiter {
 
-    buckets: Object
+    buckets: {[key: string]: LocalBucket }
     global: boolean
     globalReset: number
 
@@ -49,12 +49,9 @@ class Ratelimiter {
      */
     queue(fn :Function, url :string, method :string) {
         let routeKey = this.routify(url, method);
-        //@ts-ignore
         if (!this.buckets[routeKey]) {
-            //@ts-ignore
             this.buckets[routeKey] = new LocalBucket(this);
         }
-        //@ts-ignore
         this.buckets[routeKey].queue(fn);
     }
 }
