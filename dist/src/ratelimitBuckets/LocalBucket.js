@@ -36,8 +36,10 @@ class LocalBucket {
             let wrapFn = () => {
                 //@ts-ignore
                 if (typeof fn.then === 'function') {
+                    //@ts-ignore Cannot invoke an expression whose type lacks a call signature
                     return fn(bkt).then(res).catch(rej);
                 }
+                //@ts-ignore Cannot invoke an expression whose type lacks a call signature
                 return res(fn(bkt));
             };
             this.fnQueue.push({
@@ -52,12 +54,10 @@ class LocalBucket {
      */
     checkQueue() {
         if (this.ratelimiter.global) {
-            //@ts-ignore
             this.resetTimeout = setTimeout(() => this.resetRemaining(), this.ratelimiter.globalReset);
             return;
         }
         if (this.remaining === 0) {
-            //@ts-ignore
             this.resetTimeout = setTimeout(() => this.resetRemaining(), this.reset);
             return;
         }

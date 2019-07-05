@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import Ratelimiter from "../Ratelimiter";
 /**
  * Bucket used for saving ratelimits
@@ -14,7 +15,7 @@ declare class LocalBucket {
     limit: number;
     remaining: number;
     reset: number;
-    resetTimeout: number | undefined | null;
+    resetTimeout: NodeJS.Timer | null;
     ratelimiter: Ratelimiter;
     /**
      * Create a new bucket
@@ -28,7 +29,7 @@ declare class LocalBucket {
      * @returns {Promise.<void>} - Result of the function if any
      * @protected
      */
-    queue(fn: Function): Promise<void>;
+    queue(fn: Function | Promise<Function>): Promise<this>;
     /**
      * Check if there are any functions in the queue that haven't been executed yet
      * @protected
