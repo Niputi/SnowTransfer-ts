@@ -5,6 +5,7 @@ import LocalBucket from "./ratelimitBuckets/LocalBucket";
 import Endpoints from "./Endpoints";
 import { version } from "../package.json";
 import FormData from "form-data";
+import { Disocrd_Rate_Limit_Headers } from "./LibTypes";
 
 interface TOptions {
     sentry: NodeClient,
@@ -137,34 +138,26 @@ class RequestHandler {
      * @param {Boolean} reactions - Whether to use reaction ratelimits (1/250ms)
      * @private
      */
-    private _applyRatelimitHeaders(bkt: LocalBucket, headers: Object, offsetDate: Number, reactions = false) {
-        //@ts-ignore
-        if (headers['x-ratelimit-global']) {
+    private _applyRatelimitHeaders(bkt: LocalBucket, headers: Disocrd_Rate_Limit_Headers, offsetDate: number, reactions = false) {
+        if (headers["X-RateLimit-Global"]) {
             bkt.ratelimiter.global = true;
-            //@ts-ignore
-            bkt.ratelimiter.globalReset = parseInt(headers['retry_after']);
+            bkt.ratelimiter.globalReset = Number(headers['Retry-After']);
         }
-        //@ts-ignore
-        if (headers['x-ratelimit-reset']) {
-            //@ts-ignore
-            let reset = (headers['x-ratelimit-reset'] * 1000) - offsetDate;
+        if (headers['X-RateLimit-Reset']) {
+            let reset = (headers['X-RateLimit-Reset'] * 1000) - offsetDate;
             if (reactions) {
                 bkt.reset = Math.max(reset, 250);
             } else {
                 bkt.reset = reset;
             }
         }
-        //@ts-ignore
-        if (headers['x-ratelimit-remaining']) {
-            //@ts-ignore
-            bkt.remaining = parseInt(headers['x-ratelimit-remaining']);
+        if (headers['X-RateLimit-Remaining']) {
+            bkt.remaining = Number(headers['X-RateLimit-Remaining']);
         } else {
             bkt.remaining = 1;
         }
-        //@ts-ignore
-        if (headers['x-ratelimit-limit']) {
-            //@ts-ignore
-            bkt.limit = parseInt(headers['x-ratelimit-limit']);
+        if (headers['X-RateLimit-Limit']) {
+            bkt.limit = Number(headers['X-RateLimit-Limit']);
         }
 
     }

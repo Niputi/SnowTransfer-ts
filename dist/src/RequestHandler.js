@@ -115,16 +115,12 @@ class RequestHandler {
      * @private
      */
     _applyRatelimitHeaders(bkt, headers, offsetDate, reactions = false) {
-        //@ts-ignore
-        if (headers['x-ratelimit-global']) {
+        if (headers["X-RateLimit-Global"]) {
             bkt.ratelimiter.global = true;
-            //@ts-ignore
-            bkt.ratelimiter.globalReset = parseInt(headers['retry_after']);
+            bkt.ratelimiter.globalReset = Number(headers['Retry-After']);
         }
-        //@ts-ignore
-        if (headers['x-ratelimit-reset']) {
-            //@ts-ignore
-            let reset = (headers['x-ratelimit-reset'] * 1000) - offsetDate;
+        if (headers['X-RateLimit-Reset']) {
+            let reset = (headers['X-RateLimit-Reset'] * 1000) - offsetDate;
             if (reactions) {
                 bkt.reset = Math.max(reset, 250);
             }
@@ -132,18 +128,14 @@ class RequestHandler {
                 bkt.reset = reset;
             }
         }
-        //@ts-ignore
-        if (headers['x-ratelimit-remaining']) {
-            //@ts-ignore
-            bkt.remaining = parseInt(headers['x-ratelimit-remaining']);
+        if (headers['X-RateLimit-Remaining']) {
+            bkt.remaining = Number(headers['X-RateLimit-Remaining']);
         }
         else {
             bkt.remaining = 1;
         }
-        //@ts-ignore
-        if (headers['x-ratelimit-limit']) {
-            //@ts-ignore
-            bkt.limit = parseInt(headers['x-ratelimit-limit']);
+        if (headers['X-RateLimit-Limit']) {
+            bkt.limit = Number(headers['X-RateLimit-Limit']);
         }
     }
     /**
