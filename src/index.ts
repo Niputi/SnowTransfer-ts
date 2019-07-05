@@ -6,4 +6,4 @@ function SnowTransfer(token: string, options: TOptions= {}) {
 }
 
 export default SnowTransfer;
-export { SnowTransfer }
+exports = module.exports = SnowTransfer
