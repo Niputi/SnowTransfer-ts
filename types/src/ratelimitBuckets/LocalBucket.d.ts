@@ -15,7 +15,7 @@ declare class LocalBucket {
     limit: number;
     remaining: number;
     reset: number;
-    resetTimeout: NodeJS.Timer | null;
+    resetTimeout: NodeJS.Timeout | null;
     ratelimiter: Ratelimiter;
     /**
      * Create a new bucket
