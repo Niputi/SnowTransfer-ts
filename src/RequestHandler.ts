@@ -8,7 +8,7 @@ import FormData from "form-data";
 import { Disocrd_Rate_Limit_Headers } from "./LibTypes";
 
 interface TOptions {
-    sentry: NodeClient,
+    sentry: NodeClient | null,
     token: string,
     baseHost: string
 }

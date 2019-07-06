@@ -2,7 +2,7 @@ import { Method, AxiosInstance } from "axios";
 import { NodeClient } from "@sentry/node";
 import Ratelimiter from "./Ratelimiter";
 interface TOptions {
-    sentry: NodeClient;
+    sentry: NodeClient | null;
     token: string;
     baseHost: string;
 }
