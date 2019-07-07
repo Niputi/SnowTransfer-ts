@@ -55,3 +55,4 @@ declare const _default: {
     WEBHOOK_TOKEN_SLACK: (hookID: string, token: string) => string;
 };
 export default _default;
+//# sourceMappingURL=Endpoints.d.ts.map

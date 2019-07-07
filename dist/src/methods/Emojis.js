@@ -112,3 +112,4 @@ class EmojiMethods {
  * @property {Boolean} managed - whether this emoji is managed
  */
 exports.default = EmojiMethods;
+//# sourceMappingURL=Emojis.js.map

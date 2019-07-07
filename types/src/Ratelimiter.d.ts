@@ -33,3 +33,4 @@ declare class Ratelimiter {
     queue(fn: Function, url: string, method: string): void;
 }
 export default Ratelimiter;
+//# sourceMappingURL=Ratelimiter.d.ts.map

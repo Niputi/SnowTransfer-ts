@@ -6,3 +6,4 @@ function SnowTransfer(token, options = {}) {
 }
 exports.default = SnowTransfer;
 exports = module.exports = SnowTransfer;
+//# sourceMappingURL=index.js.map

@@ -52,3 +52,4 @@ class InviteMethods {
  * @property {Boolean} [revoked] - if this invite has been revoked
  */
 exports.default = InviteMethods;
+//# sourceMappingURL=Invites.js.map

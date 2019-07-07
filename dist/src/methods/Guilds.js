@@ -629,3 +629,4 @@ class GuildMethods {
  */
 // those moves https://youtu.be/oCrwzN6eb4Q?t=51s nice
 exports.default = GuildMethods;
+//# sourceMappingURL=Guilds.js.map

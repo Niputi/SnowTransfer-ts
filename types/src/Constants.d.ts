@@ -5,3 +5,4 @@ declare const _default: {
     BULK_DELETE_MESSAGES_MAX: number;
 };
 export default _default;
+//# sourceMappingURL=Constants.d.ts.map

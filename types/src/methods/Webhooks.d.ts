@@ -140,3 +140,4 @@ declare class WebhookMethods {
     executeWebhookSlack(webhookId: string, token: string, data: Object): Promise<void>;
 }
 export default WebhookMethods;
+//# sourceMappingURL=Webhooks.d.ts.map

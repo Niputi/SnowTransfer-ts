@@ -39,3 +39,4 @@ declare class BotMethods {
  * @property {Number} [shards] - number of shards, recommended by discord
  */
 export default BotMethods;
+//# sourceMappingURL=Bots.d.ts.map

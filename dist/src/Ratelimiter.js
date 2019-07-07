@@ -48,3 +48,4 @@ class Ratelimiter {
     }
 }
 exports.default = Ratelimiter;
+//# sourceMappingURL=Ratelimiter.js.map

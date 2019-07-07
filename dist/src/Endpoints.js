@@ -63,3 +63,4 @@ exports.default = {
     WEBHOOK_TOKEN: (hookID, token) => `/webhooks/${hookID}/${token}`,
     WEBHOOK_TOKEN_SLACK: (hookID, token) => `/webhooks/${hookID}/${token}/slack`,
 };
+//# sourceMappingURL=Endpoints.js.map

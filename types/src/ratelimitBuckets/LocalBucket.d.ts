@@ -50,3 +50,4 @@ declare class LocalBucket {
     dropQueue(): void;
 }
 export default LocalBucket;
+//# sourceMappingURL=LocalBucket.d.ts.map

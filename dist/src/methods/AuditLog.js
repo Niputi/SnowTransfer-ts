@@ -58,3 +58,4 @@ class AuditLogMethods {
  * @type {AuditLogMethods}
  */
 exports.default = AuditLogMethods;
+//# sourceMappingURL=AuditLog.js.map

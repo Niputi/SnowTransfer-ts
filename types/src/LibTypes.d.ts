@@ -280,3 +280,4 @@ export declare type PartialInputMessage = {
         file: Buffer;
     };
 };
+//# sourceMappingURL=LibTypes.d.ts.map

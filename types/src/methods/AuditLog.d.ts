@@ -64,3 +64,4 @@ declare class AuditLogMethods {
  * @type {AuditLogMethods}
  */
 export default AuditLogMethods;
+//# sourceMappingURL=AuditLog.d.ts.map

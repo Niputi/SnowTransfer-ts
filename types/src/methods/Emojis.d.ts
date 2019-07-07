@@ -105,3 +105,4 @@ declare class EmojiMethods {
  * @property {Boolean} managed - whether this emoji is managed
  */
 export default EmojiMethods;
+//# sourceMappingURL=Emojis.d.ts.map

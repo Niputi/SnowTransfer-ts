@@ -506,3 +506,4 @@ class ChannelMethods {
  * @property {String} type - type of the overwrite, either member or role
  */
 exports.default = ChannelMethods;
+//# sourceMappingURL=Channels.js.map

@@ -6,3 +6,4 @@ exports.default = {
     BULK_DELETE_MESSAGES_MIN: 2,
     BULK_DELETE_MESSAGES_MAX: 100
 };
+//# sourceMappingURL=Constants.js.map

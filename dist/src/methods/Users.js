@@ -106,3 +106,4 @@ class UserMethods {
  * @property {String} email - email of the user
  */
 exports.default = UserMethods;
+//# sourceMappingURL=Users.js.map

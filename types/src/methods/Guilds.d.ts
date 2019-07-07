@@ -634,3 +634,4 @@ declare class GuildMethods {
  * @property {User} user - user that was banned
  */
 export default GuildMethods;
+//# sourceMappingURL=Guilds.d.ts.map

@@ -46,3 +46,4 @@ declare class InviteMethods {
  * @property {Boolean} [revoked] - if this invite has been revoked
  */
 export default InviteMethods;
+//# sourceMappingURL=Invites.d.ts.map

@@ -19,7 +19,9 @@
       "experimentalDecorators": true,
       "resolveJsonModule": true,
       "allowSyntheticDefaultImports": true,
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "declarationMap": true,
+      "sourceMap": true
   },
   "include": [
       "./src/"

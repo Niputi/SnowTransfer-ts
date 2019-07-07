@@ -36,3 +36,4 @@ class VoiceMethods {
  * @property {Boolean} custom - if this is a custom region (used for events/etc)
  */
 exports.default = VoiceMethods;
+//# sourceMappingURL=Voices.js.map

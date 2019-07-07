@@ -435,3 +435,4 @@ declare class ChannelMethods {
  * @property {String} type - type of the overwrite, either member or role
  */
 export default ChannelMethods;
+//# sourceMappingURL=Channels.d.ts.map

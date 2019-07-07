@@ -93,3 +93,4 @@ declare class UserMethods {
  * @property {String} email - email of the user
  */
 export default UserMethods;
+//# sourceMappingURL=Users.d.ts.map

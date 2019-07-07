@@ -49,3 +49,4 @@ declare class SnowTransfer {
     constructor(token: string, options?: TOptions);
 }
 export default SnowTransfer;
+//# sourceMappingURL=SnowTransfer.d.ts.map

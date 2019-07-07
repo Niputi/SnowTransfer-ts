@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Bucket used for saving ratelimits
@@ -84,3 +84,4 @@ class LocalBucket {
     }
 }
 exports.default = LocalBucket;
+//# sourceMappingURL=LocalBucket.js.map

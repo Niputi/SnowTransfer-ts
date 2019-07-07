@@ -45,3 +45,4 @@ class BotMethods {
  * @property {Number} [shards] - number of shards, recommended by discord
  */
 exports.default = BotMethods;
+//# sourceMappingURL=Bots.js.map

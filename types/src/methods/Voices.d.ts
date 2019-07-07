@@ -32,3 +32,4 @@ declare class VoiceMethods {
  * @property {Boolean} custom - if this is a custom region (used for events/etc)
  */
 export default VoiceMethods;
+//# sourceMappingURL=Voices.d.ts.map
