@@ -19,7 +19,8 @@
       "allowSyntheticDefaultImports": true,
       "moduleResolution": "node",
       "declarationMap": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "incremental": true
   },
   "include": [
       "./src/"
