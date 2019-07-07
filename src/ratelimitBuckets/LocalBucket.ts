@@ -1,5 +1,3 @@
-'use strict';
-
 import Ratelimiter from "../Ratelimiter";
 
 
@@ -15,7 +13,7 @@ import Ratelimiter from "../Ratelimiter";
  */
 class LocalBucket {
 
-    fnQueue: Array<any>
+    fnQueue: Array<{fn: Function | Promise<Function>, callback: Function}>
     limit: number
     remaining: number
     reset: number

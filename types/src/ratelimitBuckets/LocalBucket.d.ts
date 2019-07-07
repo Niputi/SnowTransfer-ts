@@ -11,12 +11,15 @@ import Ratelimiter from "../Ratelimiter";
  * @protected
  */
 declare class LocalBucket {
-    fnQueue: Array<any>;
+    fnQueue: Array<{
+        fn: Function | Promise<Function>;
+        callback: Function;
+    }>;
     limit: number;
     remaining: number;
     reset: number;
-    resetTimeout: NodeJS.Timeout | null;
     ratelimiter: Ratelimiter;
+    resetTimeout: NodeJS.Timeout | null;
     /**
      * Create a new bucket
      * @param {Ratelimiter} ratelimiter - ratelimiter used for ratelimiting requests
