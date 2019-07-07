@@ -5,7 +5,7 @@ import LocalBucket from "./ratelimitBuckets/LocalBucket";
 import Endpoints from "./Endpoints";
 import { version } from "../package.json";
 import FormData from "form-data";
-import { Disocrd_Rate_Limit_Headers } from "./LibTypes";
+import { DisocrdRateLimitHeaders } from "./LibTypes";
 
 interface TOptions {
     sentry: NodeClient | null,
@@ -134,7 +134,7 @@ class RequestHandler {
      * @param {Boolean} reactions - Whether to use reaction ratelimits (1/250ms)
      * @private
      */
-    private _applyRatelimitHeaders(bkt: LocalBucket, headers: Disocrd_Rate_Limit_Headers, offsetDate: number, reactions = false) {
+    private _applyRatelimitHeaders(bkt: LocalBucket, headers: DisocrdRateLimitHeaders, offsetDate: number, reactions = false) {
         if (headers["X-RateLimit-Global"]) {
             bkt.ratelimiter.global = true;
             bkt.ratelimiter.globalReset = Number(headers['Retry-After']);

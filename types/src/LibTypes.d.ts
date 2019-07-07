@@ -1,4 +1,5 @@
 /// <reference types="node" />
+export declare type TAuditLogEvents = 1 | 10 | 11 | 12 | 13 | 14 | 15 | 20 | 21 | 22 | 23 | 24 | 25 | 30 | 31 | 32 | 40 | 41 | 42 | 50 | 51 | 52 | 60 | 61 | 62 | 72;
 export interface TGuild {
     id: string;
     name: string;
@@ -31,7 +32,7 @@ export interface TGuild {
     premium_tier: 0 | 1 | 2 | 3;
     premium_subscription_count?: number;
 }
-export interface Disocrd_Rate_Limit_Headers {
+export interface DisocrdRateLimitHeaders {
     "X-RateLimit-Limit": number;
     "X-RateLimit-Remaining": number;
     "X-RateLimit-Reset": number;
@@ -48,6 +49,9 @@ export interface TEmoji {
     managed?: boolean;
     animated?: boolean;
 }
+/**
+ * Represents a guild or DM channel within Discord.
+ */
 export interface TChannel {
     id: string;
     type: 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -73,12 +77,12 @@ export interface TGuildMember {
     nick?: string;
     roles: Array<string>;
     joined_at: string;
-    premium_since: string;
+    premium_since: string | null;
     deaf: boolean;
     mute: boolean;
 }
 export interface TBan {
-    reason?: string;
+    reason: string | null;
     user: TUser;
 }
 export interface TUser {
@@ -147,11 +151,11 @@ export interface TGatewayData {
 }
 export interface TGuildEmbed {
     enabled: boolean;
-    channel_id: string;
+    channel_id: string | null;
 }
 export interface TInvite {
     code: string;
-    guild: TGuild;
+    guild?: TGuild;
     channel: TChannel;
     uses?: number;
     max_uses?: number;
@@ -205,7 +209,7 @@ export interface TMessage {
         height: number | null;
         width: number | null;
     }[];
-    embeds: TEmbedObject[];
+    embeds: TEmbed[];
     reactions?: {
         count: number;
         me: boolean;
@@ -227,7 +231,7 @@ export interface TMessage {
         name: string;
     };
 }
-export declare type TEmbedObject = {
+export declare type TEmbed = {
     title?: string;
     description?: string;
     url?: string;
@@ -274,7 +278,7 @@ export declare type TEmbedObject = {
 export declare type PartialInputMessage = {
     content?: string;
     tts?: boolean;
-    embed?: TEmbedObject;
+    embed?: TEmbed;
     file?: {
         name?: string;
         file: Buffer;

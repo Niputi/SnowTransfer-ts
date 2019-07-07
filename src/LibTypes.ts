@@ -1,3 +1,5 @@
+export type TAuditLogEvents = 1 | 10 | 11 | 12 | 13| 14 | 15| 20 | 21 | 22 | 23| 24 | 25| 30 | 31| 32 | 40 | 41 | 42 | 50 | 51 | 52 | 60 | 61 | 62 | 72
+
 export interface TGuild {
   id: string,
   name: string,
@@ -31,7 +33,7 @@ export interface TGuild {
   premium_subscription_count?: number
 }
 
-export interface Disocrd_Rate_Limit_Headers {
+export interface DisocrdRateLimitHeaders {
   "X-RateLimit-Limit" : number,
   "X-RateLimit-Remaining": number,
   "X-RateLimit-Reset": number,
@@ -49,10 +51,12 @@ export interface TEmoji {
   managed?: boolean,
   animated?: boolean
 }
-
+/**
+ * Represents a guild or DM channel within Discord.
+ */
 export interface TChannel {
   id : string,
-  type: 0 | 1 | 2 | 3 | 4 | 5 | 6 ,
+  type: 0 | 1 | 2 | 3 | 4 | 5 | 6,
   guild_id?: string,
   position?: number,
   permission_overwrites: TPermissionOverwrite[],
@@ -76,13 +80,13 @@ export interface TGuildMember {
   nick?: string,
   roles: Array<string>,
   joined_at: string,
-  premium_since: string,
+  premium_since: string | null,
   deaf: boolean,
   mute: boolean
 }
 
 export interface TBan {
-  reason?: string,
+  reason: string | null,
   user: TUser
 }
 
@@ -159,12 +163,12 @@ export interface TGatewayData {
 
 export interface TGuildEmbed {
   enabled: boolean,
-  channel_id: string
+  channel_id: string | null
 }
 
 export interface TInvite {
   code: string, 
-  guild: TGuild,
+  guild?: TGuild,
   channel: TChannel,
   uses?: number,
   max_uses?: number,
@@ -183,6 +187,7 @@ export interface TVoiceRegion {
   custom: boolean
 }
 
+// not sure about this one
 export interface TSelfUser {
   bot: boolean,
   mfa_enabled: boolean,
@@ -214,7 +219,7 @@ export interface TMessage {
   mentions: any,
   mention_roles: string[],
   attachments: { id: string, filename: string, size: string, url: string, proxy_url: string, height: number | null, width: number | null }[],
-  embeds: TEmbedObject[],
+  embeds: TEmbed[],
   reactions?: { count: number, me: boolean, emoji: TEmoji}[],
   nonce?: string | null,
   pinned: boolean,
@@ -224,7 +229,7 @@ export interface TMessage {
   application?: { id: string, cover_image?: string, description: string, icon: string | null, name: string }
 }
 
-export type TEmbedObject = { 
+export type TEmbed = { 
   title?: string,
   description?: string,
   url?: string,
@@ -239,4 +244,4 @@ export type TEmbedObject = {
   fields?: { name: string, value: string, inline?: boolean }[];
 }
 
-export type PartialInputMessage = {content?: string, tts?: boolean, embed?: TEmbedObject, file?: {name?: string, file: Buffer }}
+export type PartialInputMessage = {content?: string, tts?: boolean, embed?: TEmbed, file?: {name?: string, file: Buffer }}
