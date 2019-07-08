@@ -622,7 +622,7 @@
         "signature": "083c92ca76a6525e0f54c00f7b607cc46975935195d041dd4e9595afab615f35"
       },
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/package.json": {
-        "version": "bf558cafd03bd9b02b5ba696f0c52d86f8c6bcc14c96543d2cb8625abe1bc187"
+        "version": "85d90b9719b8d15a21b7ed7ab46399efce7592eec45ca6898a60c7e3bdc08add"
       },
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/node_modules/form-data/index.d.ts": {
         "version": "89ab56f7a57cb0493a5f0894fa2e29852b19b3f580eea4a8c3c4b80166d50bbb",
@@ -669,12 +669,8 @@
         "signature": "ab2b8cb4dcd371cc43564ed90ab9dd7ff7cb7b7b9935886f7352f5dab397fbc8"
       },
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/snowtransfer.ts": {
-        "version": "327a474a8775bff3878dd3b76eff79f377e5bba0ade7044c50bc5166da42da5c",
-        "signature": "2512d4b96be20fd1e971969d7a409b0e581bad2725944ae68afa1723f5d5f975"
-      },
-      "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/index.ts": {
-        "version": "617e7b30e64894367699b21a3a6ab58c1be49ea8f4afe904842a7161619580f0",
-        "signature": "6b2c15227872d68ed19f2d1c00b7ff5b7e816e0171cfd180d040a53ce135de28"
+        "version": "e507d2cb46bc1f5f59282c2d1581c41d01748d7f40b1d74189327c3093645afa",
+        "signature": "d63335969db4ec74dd45e519f6109a81f455422a9a3995506423a7cd29f990a1"
       }
     },
     "options": {
@@ -700,7 +696,6 @@
       "sourceMap": true,
       "incremental": true,
       "project": "c:\\Users\\Niputi\\Desktop\\modules-in-typescript\\SnowTransfer-ts\\tsconfig.json",
-      "watch": true,
       "configFilePath": "c:/Users/Niputi/Desktop/modules-in-typescript/SnowTransfer-ts/tsconfig.json"
     },
     "referencedMap": {
@@ -1698,11 +1693,6 @@
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/node_modules/@sentry/node/dist/index.d.ts",
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/node_modules/@types/node/util.d.ts",
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/index.ts": [
-        "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/snowtransfer.ts",
-        "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/node_modules/@types/node/util.d.ts",
-        "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1835,6 +1825,7 @@
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/libtypes.ts"
       ],
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/snowtransfer.ts": [
+        "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/node_modules/@sentry/node/dist/index.d.ts",
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/voices.ts",
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/guilds.ts",
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/invites.ts",
@@ -1844,9 +1835,6 @@
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/bots.ts",
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/auditlog.ts",
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/channels.ts"
-      ],
-      "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/index.ts": [
-        "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/snowtransfer.ts"
       ],
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/voices.ts": [
         "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/requesthandler.ts",
@@ -2810,8 +2798,7 @@
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/invites.ts",
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/guilds.ts",
       "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/methods/voices.ts",
-      "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/snowtransfer.ts",
-      "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/index.ts"
+      "c:/users/niputi/desktop/modules-in-typescript/snowtransfer-ts/src/snowtransfer.ts"
     ]
   },
   "version": "3.5.2"

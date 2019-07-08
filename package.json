@@ -4,11 +4,11 @@
   "name": "snowtransfer-ts",
   "version": "0.2.4",
   "description": "Minimalistic Rest client for the Discord Api",
-  "main": "./dist/src/index.js",
+  "main": "./dist/src/SnowTransfer.js",
   "engines": {
     "node": ">=8.0.0"
   },
-  "types": "./types/src/index.d.ts",
+  "types": "./types/src/SnowTransfer.d.ts",
   "keywords": [
     "discord",
     "api",
@@ -35,7 +35,7 @@
     "@sentry/node": "^5.5.0"
   },
   "devDependencies": {
-    "@types/node": "^12.0.12",
+    "@types/node": "^12.6.0",
     "eslint": "^6.0.1"
   }
 }

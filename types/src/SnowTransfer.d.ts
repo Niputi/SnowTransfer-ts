@@ -7,9 +7,11 @@ import WebhookMethods from "./methods/Webhooks";
 import InviteMethods from "./methods/Invites";
 import GuildMethods from "./methods/Guilds";
 import VoiceMethods from "./methods/Voices";
+import { NodeOptions as sentryOptions } from "@sentry/node";
 export interface TOptions {
     sentryDsn?: string;
     baseHost?: string;
+    sentryOptions?: sentryOptions;
 }
 declare class SnowTransfer {
     private options;

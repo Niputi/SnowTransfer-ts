@@ -11,11 +11,12 @@ import WebhookMethods from "./methods/Webhooks";
 import InviteMethods from "./methods/Invites";
 import GuildMethods from "./methods/Guilds";
 import VoiceMethods from "./methods/Voices"
-import {NodeClient as sentry} from "@sentry/node";
+import {NodeClient as sentry, NodeOptions as sentryOptions} from "@sentry/node";
 
 export interface TOptions {
     sentryDsn?: string,
-    baseHost?: string
+    baseHost?: string,
+    sentryOptions?: sentryOptions
 }
 class SnowTransfer {
     private options: { sentryDsn?: string, baseHost?: string }
@@ -85,3 +86,4 @@ class SnowTransfer {
 }
 
 export default SnowTransfer;
+exports = module.exports = SnowTransfer

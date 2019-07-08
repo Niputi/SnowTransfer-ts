@@ -1,7 +1,7 @@
-let SnowTransfer = require('../dist/src/index');
+let SnowTransfer = require('../dist/src/SnowTransfer');
 
 // also works without `default`
-let client = SnowTransfer.default('asd');
+let client = new SnowTransfer.default('asd');
 let request = async () => {
     let message = await client.channel.createMessage('your channel id here', {
         content: 'hello',

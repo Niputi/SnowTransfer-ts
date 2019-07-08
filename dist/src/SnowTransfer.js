@@ -66,4 +66,5 @@ class SnowTransfer {
     }
 }
 exports.default = SnowTransfer;
+exports = module.exports = SnowTransfer;
 //# sourceMappingURL=SnowTransfer.js.map
